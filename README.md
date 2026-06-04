@@ -14,17 +14,18 @@ The final analytical layer serves business intelligence insights natively within
 ## 🏗️ System Architecture & Data Flow
 The project rigorously implements a structured Medallion Architecture data pipeline to guarantee data quality and lineage control.
 
+```text
 +------------------+      +-------------------+      +------------------+      +------------------+
 | Raw Data Sources | ---> |    Bronze Layer   | ---> |   Silver Layer   | ---> |    Gold Layer    |
 | (Transactions/   |      | (Append-Only/Raw  |      | (Cleaned, Typed, |      | (Aggregated Data/|
 |    Units CSV)    |      |  History Snapshots|      | Enriched Delta)  |      | BI-Ready Tables) |
 +------------------+      +-------------------+      +------------------+      +------------------+
-|
-v
-+------------------+
-| Power BI / Direct|
-| SQL Dashboard    |
-+------------------+
+                                                                                    |
+                                                                                    v
+                                                                          +------------------+
+                                                                          | Power BI / Direct|
+                                                                          | SQL Dashboard    |
+                                                                          +------------------+
 
 ### 🗂️ Medallion Breakdown
 1. **Landing Zone & Archival Logic:** Raw `.csv` transaction and unit dumps are ingested into an Azure Data Lake Storage (ADLS Gen2) container. Automated Python processing manages historical run states by clearing and archiving old runs to a secure directory using timestamped schemas to prevent destination collisions.
