@@ -9,6 +9,8 @@ The final analytical layer serves business intelligence insights natively within
 * **Supply Inventory (Donut Chart):** Highlights property distribution metrics broken down by unit classifications and bedroom configurations.
 * **Top Hotspots (Horizontal Bar Chart):** Pinpoints geographic performance metrics, tracking elite real estate volume hubs (e.g., Burj Khalifa, Al Barsha South Fourth, Business Bay).
 
+<img width="1296" height="743" alt="Screenshot 2026-06-04 210235" src="https://github.com/user-attachments/assets/b1b9e7ee-853b-4dfd-abb1-77c9023a0e8a" />
+
 ---
 
 ## 🏗️ System Architecture & Data Flow
